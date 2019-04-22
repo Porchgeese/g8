@@ -43,5 +43,5 @@ object Main extends IOApp.WithContext {
         .newHikariTransactor[IO](config.db.driverClassName, config.db.url, config.db.user, config.db.pass, dbConnectionEc, dbTransactEc)
     } yield {
       App(executionContext, contextShift, timer, transactor, client, amqpClient, config)
-    }).use(app => app.handlers *> server(app).use(_ => IO.never))
+    }).use(app => app.handlers *> app.migrations *> server(app).use(_ => IO.never))
 }

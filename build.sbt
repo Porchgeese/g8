@@ -43,6 +43,8 @@ lazy val root = (project in file("."))
       "com.h2database"             % "h2"                       % "1.4.196" % "test, it" force (),
       "io.circe"                   %% "circe-generic"           % circeVersion,
       "io.circe"                   %% "circe-parser"            % circeVersion,
+      "io.circe"                   %% "circe-generic-extras"    % circeVersion,
+      "io.circe"                   %% "circe-java8"             % circeVersion,
       "com.beachape"               %% "enumeratum-circe"        % "1.5.17",
       "net.logstash.logback"       % "logstash-logback-encoder" % "5.2",
       "ch.qos.logback"             % "logback-classic"          % "1.2.3",
